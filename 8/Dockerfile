@@ -16,7 +16,7 @@ RUN set -ex; \
     mkdir /usr/src/drupal; \
     chown wodby:wodby /usr/src/drupal; \
     \
-    su-exec wodby composer create-project drupal-composer/drupal-project:8.x-dev /usr/src/drupal \
+    su-exec wodby composer --repository-url="https://repo.packagist.com/pfizer/" pfizer/pfpfizerdk:dev-dev /usr/src/drupal \
         --stability dev --no-interaction --no-install; \
     \
     cd /usr/src/drupal; \
