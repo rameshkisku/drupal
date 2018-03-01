@@ -16,8 +16,7 @@ RUN set -ex; \
     mkdir /usr/src/drupal; \
     chown wodby:wodby /usr/src/drupal; \
     \
-    su-exec wodby composer config --global --auth http-basic.repo.packagist.com prash-ittb 2059cd808a216ff2deae8a1783c5a3a09bd108e53ae0acdefec249451518 \
-    su-exec wodby composer --repository-url="https://repo.packagist.com/pfizer/" pfizer/pfpfizerdk:dev-dev /usr/src/drupal \
+    su-exec wodby composer create-project drupal-composer/drupal-project:8.x-dev /usr/src/drupal \
         --stability dev --no-interaction --no-install; \
     \
     cd /usr/src/drupal; \
